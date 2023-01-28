@@ -1,23 +1,15 @@
-import { Auth, ThemeSupa } from "@supabase/auth-ui-react";
-import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
-import Account from "../components/Account";
+import type { NextPage } from "next";
+import { Text, Spacer } from "@nextui-org/react";
 
-const Home = () => {
-  const session = useSession();
-  const supabase = useSupabaseClient();
-
+const Home: NextPage = () => {
   return (
-    <div className="container" style={{ padding: "50px 0 100px 0" }}>
-      {!session ? (
-        <Auth
-          supabaseClient={supabase}
-          appearance={{ theme: ThemeSupa }}
-          theme="dark"
-        />
-      ) : (
-        <Account session={session} />
-      )}
-    </div>
+    <>
+      <Text h2>The future of article sharing</Text>
+      <Spacer y={1} />
+      <Text size="$lg">
+        ShareArticles allows you to create and share articles.
+      </Text>
+    </>
   );
 };
 

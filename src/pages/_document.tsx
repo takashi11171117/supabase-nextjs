@@ -9,7 +9,7 @@ import Document, {
 import React from "react";
 
 class MyDocument extends Document {
-  static async loadGetInitialProps(ctx: DocumentContext) {
+  static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
     return {
       ...initialProps,
